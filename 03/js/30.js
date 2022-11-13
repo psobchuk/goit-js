@@ -4,18 +4,11 @@ function makeTask(data) {
   const priority = "Normal";
   // Change code below this line
   const newObject = {
-    completed: data.completed,
-    category: data.category,
-    priority: data.priority,
+    completed,
+    category,
+    priority,
+    ...data,
   };
   return newObject;
   // Change code above this line
 }
-
-console.log(
-  makeTask({
-    category: "Homemade",
-    priority: "Low",
-    text: "Take out the trash",
-  })
-);
