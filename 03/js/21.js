@@ -9,7 +9,7 @@ const highTemperatures = {
 // const today = highTemperatures.today;
 // const tomorrow = highTemperatures.tomorrow;
 
-const [...Object.keys(highTemperatures)] = ;
+const [Object.keys(highTemperatures)] = ;
 
 // console.log(keys);
 
