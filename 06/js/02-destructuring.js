@@ -100,7 +100,57 @@ const profile2 = {
   },
 };
 
-const { name: name4, tag: tag4, location: location4, ...restProps } = profile;
+const { name: name4, tag: tag4, location: location4, ...restProps } = profile2;
 
 console.log(name4, tag4, location4);
 console.log(restProps);
+console.log(profile2);
+
+// Паттерн "Об'єкт параметрів"
+
+// const fn = function (params) {};
+
+// fn(10, 5, true, [], {}, 6);
+
+// fn({
+//   age: 10,
+//   friends: 5,
+//   isOnline: true,
+//   hobbies: [],
+//   games: {},
+//   rating: 6,
+// });
+
+// const shewProfileInfo = function (userProfile) {
+//   const {
+//     name,
+//     tag,
+//     location,
+//     avatar,
+//     stats: { followers, views, likes },
+//   } = userProfile;
+// };
+
+const showProfileInfo = function ({
+  name,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
+}) {
+  console.log(name, tag, location, avatar, followers, views, likes);
+};
+
+const profile3 = {
+  name: "Jacques Gluke",
+  tag: "jgluke",
+  location: "Ocho Rios, Jamaica",
+  avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/r_oy/128.jpg",
+  stats: {
+    followers: 5683,
+    views: 4827,
+    likes: 1308,
+  },
+};
+
+showProfileInfo(profile3);
