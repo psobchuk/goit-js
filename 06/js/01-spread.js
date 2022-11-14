@@ -50,3 +50,21 @@ const objectC = {
 };
 
 console.log(objectC);
+
+const defaultSettings = {
+  theme: "light",
+  showNotifications: true,
+  hideSidebar: false,
+};
+
+const userSettings = {
+  showNotifications: false,
+  hideSidebar: true,
+};
+
+const finalSettings = {
+  ...defaultSettings,
+  ...userSettings,
+};
+
+console.log(finalSettings);
