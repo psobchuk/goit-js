@@ -119,6 +119,11 @@ buttonRef.addEventListener("click", function () {
     |============================
   */
 
+// 1. Потрібно передати функцію
+// 2. Функція отримує елемент масиву
+// 3. Якщо елемент масиву задовільняє умові, то функція поверне true
+// 4. Якщо елемент масиву не задовільняє умові, то функція поверне false
+
 const filter = function (array, test) {
   const filteredArray = [];
 
@@ -134,11 +139,6 @@ const filter = function (array, test) {
   return filteredArray;
 };
 
-// 1. Потрібно передати функцію
-// 2. Функція отримує елемент масиву
-// 3. Якщо елемент масиву задовільняє умові, то функція поверне true
-// 4. Якщо елемент масиву не задовільняє умові, то функція поверне false
-
 const callback1 = function (value) {
   return value >= 3;
 };
@@ -146,7 +146,24 @@ const callback1 = function (value) {
 const result1 = filter([1, 2, 3, 4, 5], callback1);
 console.log(result1);
 
+const callback2 = function (value) {
+  return value <= 4;
+};
+
 const result2 = filter([1, 2, 3, 4, 5, 6, 7, 8], function (value) {
   return value <= 4;
 });
 console.log(result2);
+
+const fruits = [
+  { name: "apples", quantity: 200, isFresh: true },
+  { name: "grapes", quantity: 200, isFresh: false },
+  { name: "bananas", quantity: 200, isFresh: true },
+];
+
+const getFruitsWithQuantity = function (fruit) {
+  return fruit.quantity >= 120;
+};
+
+const result3 = filter(fruits, getFruitsWithQuantity);
+console.log(result3);
