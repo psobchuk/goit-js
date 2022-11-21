@@ -4,20 +4,9 @@ const players = [
   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
 ];
-
 // Change code below this line
-const totalPlaytime = players.reduce((total, player) => {
-  return total + player.playtime;
+
+// const totalAveragePlaytimePerGame = players;
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+  return total + player.playtime / player.gamesPlayed;
 }, 0);
-
-const totalGamesPlayed = players.reduce((total, player) => {
-  return total + player.gamesPlayed;
-}, 0);
-
-// const totalAveragePlaytimePerGame = totalPlaytime / totalGamesPlayed;
-
-const totalAveragePlaytimePerGame = players.reduce((playtime, gamesPlayed) => {
-  return playeplaytime / gam;
-});
-
-console.log(totalAveragePlaytimePerGame);
