@@ -1,26 +1,3 @@
-// 1
-const students = [
-  { name: "Манго", score: 83 },
-  { name: "Полі", score: 59 },
-  { name: "Аякс", score: 37 },
-  { name: "Ківі", score: 94 },
-];
-
-const inAscendingScoreOrder = students.sort(
-  (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
-);
-
-const inDescendingScoreOrder = students.sort(
-  (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
-);
-
-const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
-  firstStudent.name.localeCompare(secondStudent.name)
-);
-
-console.log(inAlphabeticalOrder);
-
-// 2
 const books = [
   {
     title: "The Last Kingdom",
@@ -41,14 +18,18 @@ const books = [
   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
 ];
 
-const sortedByAuthorName = books.sort((firstBook, secondBook) =>
-  firstBook.name.localeCompare(secondBook.name)
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) =>
+  firstBook.author.localeCompare(secondBook.author)
 );
 
-const sortedByReversedAuthorName = books;
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) =>
+  secondBook.author.localeCompare(firstBook.author)
+);
 
-const sortedByAscendingRating = books;
+const sortedByAscendingRating = [...books].sort(
+  (firstBook, secondBook) => firstBook.rating - secondBook.rating
+);
 
-const sortedByDescentingRating = books;
-
-console.log(sortedByAuthorName);
+const sortedByDescentingRating = [...books].sort(
+  (firstBook, secondBook) => secondBook.rating - firstBook.rating
+);
