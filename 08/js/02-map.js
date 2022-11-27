@@ -8,6 +8,11 @@ const doubleNums = numbers.map((number) => {
 
 console.log(doubleNums);
 
+/**
+  |============================
+  | Збільшуємо кількість очок кожного гравця на 10%
+  |============================
+*/
 const players = [
   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
   { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
@@ -23,4 +28,48 @@ const updatedPlayers = players.map((player) => ({
   ...player,
   points: player.points * 1.1,
 }));
+console.table(updatedPlayers);
+
+/**
+  |============================
+  | Збільшуємо кількість годин гравця по id
+  |============================
+*/
+
+const playerIdToUpdate = "player-3";
+
+// 1
+// const updatedPlayers2 = players.map((player) => {
+//   if (playerIdToUpdate === player.id) {
+//     console.log("Found!");
+
+//     return {
+//       ...player,
+//       timePlayed: player.timePlayed + 100,
+//     };
+//   }
+
+//   return player;
+// });
+
+// 2
+// const updatedPlayers2 = players.map((player) => {
+//   return playerIdToUpdate == player.id
+//     ? {
+//         ...player,
+//         timePlayed: player.timePlayed + 100,
+//       }
+//     : player;
+// });
+
+// 3
+const updatedPlayers2 = players.map((player) => {
+  playerIdToUpdate == player.id
+    ? {
+        ...player,
+        timePlayed: player.timePlayed + 100,
+      }
+    : player;
+});
+
 console.table(updatedPlayers);
