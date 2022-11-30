@@ -19,7 +19,7 @@ foo(); // window без "use strict" і undefined з "use strict"
 const petya = {
   username: "Petya",
   showThis() {
-    console.log(this);
+    console.log("this в методі об'єкта", this);
   },
   showName() {
     console.log(this.username);
@@ -36,7 +36,7 @@ petya.showName(); // 'Petya'
 */
 
 function showThis() {
-  console.log("this in showThis: ", this);
+  console.log("Складніший приклад this in showThis: ", this);
 }
 
 // Викликаємо у глобальному контексті
@@ -46,9 +46,13 @@ const user = {
   username: "Mango",
 };
 
+console.log(user); // {username: 'Mango'}
+
 // Записуємо посилання на функцію у властивість об'єкта
 // Зверніть увагу, що це не виклик - немає ()
 user.showContext = showThis;
+
+console.log(user); // {username: 'Mango', showContext: ƒ}
 
 // Викликаємо функцію в контексті об'єкта
 // this буде вказувати на поточний об'єкт, в контексті
@@ -78,12 +82,12 @@ user.showContext(); // this in showThis: {username: "Mango", showContext: ƒ}
 
 /**
   |============================
-  | this у стрілочних функціях
+  | this у стрілочних функціях. Приклад 1
   |============================
 */
 
 const showThis2 = () => {
-  console.log("this in showThis: ", this);
+  console.log("this у стрілочних функціях. this in showThis: ", this);
 };
 
 showThis2(); // this in showThis: window
@@ -94,3 +98,26 @@ const user2 = {
 user.showContext = showThis2;
 
 user.showContext(); // this in showThis: window
+
+/**
+  |============================
+  | this у стрілочних функціях. Приклад 2
+  |============================
+*/
+const hotel = {
+  username: "Resort hotel",
+  showThis() {
+    const foo = () => {
+      // Стрілки запам'ятовують контекст під час оголошення
+      // з батьківської області видимості
+      console.log("this in foo: ", this);
+    };
+
+    foo();
+    console.log("this in showThis: ", this);
+  },
+};
+
+hotel.showThis();
+// this in foo: {username: 'Resort hotel', showThis: ƒ}
+// this in showThis: {username: 'Resort hotel',showThis: ƒ}
