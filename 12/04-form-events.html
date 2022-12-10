@@ -6,17 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/04-form-events.css">
 </head>
 
 <body>
-    <button type="button" class="btn">Click me</button>
-    <form class="register-form" autocomplete="off">
-        <input type="text" name="username" placeholder="Username" />
-        <input type="password" name="password" placeholder="Password" />
-        <button type="submit">Register</button>
+    <!-- Подія submit -->
+    <form class="form" autocomplete="off">
+        <input type="text" name="login" placeholder="Login">
+        <input type="password" name="password" placeholder="Password">
+        <button class="btn" type="submit">Register</button>
     </form>
-    <script src="./js/04-form-events.js" type="module"></script>
+    <!-- Подія change -->
+    <p>
+        Selected option text: <span class="text-output">none</span>
+    <p>
+    <p>
+        Selected option value: <span class="value-output">none</span>
+    <p>
+
+        <select class="pizza-select">
+            <option value="four_meats">Four Meats</option>
+            <option value="royal_cheese">Royal Cheese</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="smoked_salmon">Smoked Salmon</option>
+        </select>
+
+
+        <script src="./js/04-form-events.js" type="module"></script>
 </body>
 
 </html>
