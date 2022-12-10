@@ -48,5 +48,6 @@ list.after(text);
   | Видалення
   |============================
 */
+
 const text2 = document.querySelector(".text");
 text2.remove();
