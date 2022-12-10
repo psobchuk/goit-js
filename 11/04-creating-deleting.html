@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="message" class="materialize-textarea" rows="5">Default textarea message</textarea>
+
+    <div>
+        <a href="/home" class="btn">home</a>
+        <a href="/about" class="btn active">about</a>
+        <a href="/gallery" class="btn">gallery</a>
+    </div>
+
+    <br>
+    <img class="image" src="https://placeimg.com/640/480/animals" alt="" width="320" />
+    <!-- Властивість textContent -->
+    <article class="article">
+        <h2 class="article-title">Welcome to Hawaii!</h2>
+        <p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quaerat nemo
+            veritatis quasi eius eum aliquid, nobis dolore nisi, magnam eaque iusto, necessitatibus atque laborum quam
+            tempora ducimus dicta ipsam.</p>
+    </article>
+
+    <!-- Властивість classList -->
+    <p id="paragraph" class="text red big">Proin magna. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam
+        libero, non adipiscing dolor urna a orci. Etiam rhoncus. Donec mi odio, faucibus at, scelerisque quis, convallis
+        in, nisi.</p>
+
+    <!-- Атрибути -->
+    <img class="image" src="https://placeimg.com/400/200/nature" alt="Beautiful nature">
+
+    <!-- data-атрибути -->
+    <div class="editor">
+        <p>Donec id justo. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem
+            ut ipsum. Curabitur suscipit suscipit tellus. Phasellus gravida semper nisi.</p>
+        <div class="actions">
+            <button type="button" class="btn" data-action="save">Save</button>
+            <button type="button" class="btn" data-action="close">Close</button>
+        </div>
+    </div>
+
+    <ul class="dishes">
+        <li data-id="14">Baked Yak &amp; Mushrooms</li>
+        <li data-id="7">Strawberry Pancakes</li>
+        <li data-id="3">Caramel Toffee</li>
+        <li data-id="61">Pistachio Elderberry Wafer</li>
+    </ul>
+
+    <script src="./js/03-properties.js" type="module"></script>
+</body>
+
+</html>
