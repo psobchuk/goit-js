@@ -5,7 +5,7 @@
 */
 
 function foo() {
-  console.log(this);
+  console.log("this у глобальній області видимості", this);
 }
 
 foo(); // window без "use strict" і undefined з "use strict"
@@ -64,6 +64,7 @@ user.showContext(); // this in showThis: {username: "Mango", showContext: ƒ}
   | this в колбек - функціях
   |============================
 */
+// console.log("this в колбек - функціях");
 
 // const customer = {
 //   firstName: "Jacob",

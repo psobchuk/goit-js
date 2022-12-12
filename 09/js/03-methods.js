@@ -4,28 +4,8 @@
   |============================
 */
 
-// function greetGuest(greeting) {
-//   console.log(`${greeting}, ${this.username}.`);
-// }
-
-// const mango = {
-//   username: "Манго",
-// };
-// const poly = {
-//   username: "Полі",
-// };
-
-// greetGuest.call(mango, "Ласкаво просимо"); // Ласкаво просимо, Манго.
-// greetGuest.call(poly, "З прибуттям"); // З прибуттям, Полі.
-
-/**
-  |============================
-  | Метод apply
-  |============================
-*/
-
-function greetGuest(greeting) {
-  console.log(`${greeting}, ${this.username}.`);
+function greetGuest(greeting1, greeting2) {
+  console.log(`${greeting1}: ${greeting2}, ${this.username}.`);
 }
 
 const mango = {
@@ -35,8 +15,28 @@ const poly = {
   username: "Полі",
 };
 
-greetGuest.apply(mango, ["Ласкаво просимо"]); // Ласкаво просимо, Манго.
-greetGuest.apply(poly, ["З прибуттям"]); // З прибуттям, Полі.
+greetGuest.call(mango, "Ласкаво просимо", "хелоу піпл"); // Ласкаво просимо, Манго.
+greetGuest.call(poly, "З прибуттям"); // З прибуттям, Полі.
+
+/**
+  |============================
+  | Метод apply
+  |============================
+*/
+
+function greetGuest2(greeting1, greeting2) {
+  console.log(`${greeting1}, ${greeting2}, ${this.username}.`);
+}
+
+const mango2 = {
+  username: "Манго",
+};
+const poly2 = {
+  username: "Полі",
+};
+
+greetGuest2.apply(mango2, ["Ласкаво просимо", "хелоу піпл"]); // Ласкаво просимо, Манго.
+greetGuest2.apply(poly2, ["З прибуттям"]); // З прибуттям, Полі.
 
 /**
   |============================

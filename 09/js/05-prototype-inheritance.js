@@ -18,14 +18,14 @@ dog.name = "Манго";
   |============================
 */
 
-console.log(dog); // { name: 'Манго', __proto__: animal }
-console.log(animal.isPrototypeOf(dog)); // true
+console.log("dog", dog); // { name: 'Манго', __proto__: animal }
+console.log("animal.isPrototypeOf(dog)", animal.isPrototypeOf(dog)); // true
 
-console.log(dog.hasOwnProperty("name")); // true
-console.log(dog.name); // 'Манго'
+console.log('dog.hasOwnProperty("name")', dog.hasOwnProperty("name")); // true
+console.log("dog.name", dog.name); // 'Манго'
 
-console.log(dog.hasOwnProperty("legs")); // false
-console.log(dog.legs); // 4
+console.log('dog.hasOwnProperty("legs")', dog.hasOwnProperty("legs")); // false
+console.log("dog.legs", dog.legs); // 4
 
 /**
   |============================
@@ -33,11 +33,11 @@ console.log(dog.legs); // 4
   |============================
 */
 const animal2 = { eats: true };
-const dog = Object.create(animal2);
-dog.barks = true;
+const dog2 = Object.create(animal2);
+dog2.barks = true;
 
-for (const key in dog) {
-  console.log(key); // barks, eats
+for (const key in dog2) {
+  console.log("key in dog2", key); // barks, eats
 }
 
 /**
@@ -49,13 +49,13 @@ for (const key in dog) {
 const animal3 = {
   eats: true,
 };
-const dog = Object.create(animal3);
-dog.barks = true;
+const dog3 = Object.create(animal3);
+dog3.barks = true;
 
 for (const key in dog) {
-  if (!dog.hasOwnProperty(key)) continue;
+  if (!dog3.hasOwnProperty(key)) continue;
 
-  console.log(key); // barks
+  console.log("key in dog:", key); // barks
 }
 
 /**
@@ -67,9 +67,9 @@ for (const key in dog) {
 const animal4 = {
   eats: true,
 };
-const dog = Object.create(animal4);
-dog.barks = true;
+const dog4 = Object.create(animal4);
+dog4.barks = true;
 
-const dogKeys = Object.keys(dog);
+const dogKeys = Object.keys(dog4);
 
-console.log(dogKeys); // ['barks']
+console.log("dogKeys:", dogKeys); // ['barks']
